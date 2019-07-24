@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan');
+
+* { font-family: 'Roboto Mono', monospace }
+
+body { margin: 0 }
+
+#project-header {
+  display: flex;
+  text-align: center;
+  justify-content: center
+}
+
+h2 {
+    font-size: 4vh;  
+    font-weight: bold;
+    color: #071013;
+    text-align: center;
+    margin: 0px
+}
+
+#main-section {
+  background-color: #A2AEBB;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  height: 100vh;
+  flex-direction: column
+}
+
+button {
+  padding: 10px 0px 10px 0px;
+  border-radius: 10px;
+  background-color: #DFE0E2;
+  border: solid 5px #23B5D3;
+  color: #23B5D3;
+  cursor: pointer
+}
+
+button:hover {
+  color: #DFE0E2;
+  background-color: #23B5D3
+}
+
+.section {
+  background-color: #DFE0E2;
+  display: grid;
+  grid-template-columns: 15vw 100px 15vw;
+  grid-template-rows: auto auto;
+  grid-gap: 1vh;
+  padding: 2vh;
+  border: solid 5px #23B5D3;
+  border-bottom: 0px  
+}
+
+#last-section { border: solid 5px #23B5D3 }
+
+.blink { animation: blinker 1s linear infinite }
+
+#break-label, #session-label, #timer-label {
+  grid-area: 1 / 1 / 1 / 4;  
+  border-bottom: solid blue;
+  border-color: #23B5D3;
+  margin-bottom: 20px
+}
+
+#break-decrement, #session-decrement, #reset {
+  grid-area: 2 / 3 / 3 / 4;
+  font-size: 7vh
+}
+
+#break-increment, #session-increment, #start_stop {
+  grid-area: 2 / 1 / 3 / 2;
+  font-size: 7vh
+}
+
+#break-length, #session-length, #time-left {
+  grid-area: 2 / 2 / 3 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+@media only screen and (max-width: 600px) {
+  #main-section {
+    justify-content: start;
+    height: 100%;
+    padding: 10vh
+  }
+
+  #break-decrement, #session-decrement, #reset {
+    grid-area: 4 / 1 / 4 / 5;
+    font-size: 5vh
+  }
+
+  #break-increment, #session-increment, #start_stop {
+    grid-area: 3 / 1 / 3 / 5;
+    font-size: 5vh
+  }
+
+  #break-label, #session-label, #timer-label { margin-bottom: 0px }
+  
+  #break-length, #session-length, #time-left {
+    grid-area: 2 / 2 / 3 / 3;
+    font-size: 5vh;
+    margin: 10px
+  }
+  
+  .section { grid-template-rows: auto auto auto auto }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+} 
